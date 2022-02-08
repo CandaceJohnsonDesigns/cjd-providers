@@ -1,0 +1,34 @@
+.wp-block-cjd-blocks-single-provider-template {
+  --cjd--template--column-gap: 2em;
+  --cjd--template--row-gap: 2em;
+  display: -ms-grid;
+  display: grid;
+  justify-content: center;
+  align-items: flex-start;
+  -ms-grid-columns: 1fr var(--cjd--template--column-gap) 3fr;
+  grid-template-columns: 1fr 3fr;
+  -ms-grid-rows: auto var(--cjd--template--row-gap) 1fr;
+  grid-template-rows: auto 1fr;
+      grid-template-areas: "featured-image content" "sidebar content";
+  -moz-column-gap: var(--cjd--template--column-gap);
+       column-gap: var(--cjd--template--column-gap);
+  row-gap: var(--cjd--template--row-gap);
+}
+.wp-block-cjd-blocks-single-provider-template .grid-area-featured-image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: featured-image;
+}
+.wp-block-cjd-blocks-single-provider-template .grid-area-content {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  grid-area: content;
+}
+.wp-block-cjd-blocks-single-provider-template .grid-area-sidebar {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,37 @@
+{
+	"name": "cjd-services",
+	"version": "0.1.0",
+	"description": "Adds a Services custom post type, custom taxonomy, and related blocks.",
+	"author": "Candace Johnson",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start",
+		"packages-update": "wp-scripts packages-update",
+		"start:services-overview": "wp-scripts start blocks/services-overview/src/index.js --output-path=blocks/services-overview/build/",
+		"build:services-overview": "wp-scripts build blocks/services-overview/src/index.js --output-path=blocks/services-overview/build/",
+		"start:provider-directory": "wp-scripts start blocks/provider-directory/src/index.js --output-path=blocks/provider-directory/build/",
+		"build:provider-directory": "wp-scripts build blocks/provider-directory/src/index.js --output-path=blocks/provider-directory/build/",
+		"start:title-by-name": "wp-scripts start blocks/title-by-name/src/index.js --output-path=blocks/title-by-name/build/",
+		"build:title-by-name": "wp-scripts build blocks/title-by-name/src/index.js --output-path=blocks/title-by-name/build/",
+		"start:job-title": "wp-scripts start blocks/job-title/src/index.js --output-path=blocks/job-title/build/",
+		"build:job-title": "wp-scripts build blocks/job-title/src/index.js --output-path=blocks/job-title/build/",
+		"start:single-provider-template": "wp-scripts start blocks/single-provider-template/src/index.js --output-path=blocks/single-provider-template/build/",
+		"build:single-provider-template": "wp-scripts build blocks/single-provider-template/src/index.js --output-path=blocks/single-provider-template/build/",
+		"start:medical-specialties": "wp-scripts start blocks/medical-specialties/src/index.js --output-path=blocks/medical-specialties/build/",
+		"build:medical-specialties": "wp-scripts build blocks/medical-specialties/src/index.js --output-path=blocks/medical-specialties/build/"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^7.0.0",
+		"@wordpress/blocks": "^11.0.0",
+		"@wordpress/i18n": "^4.2.1",
+		"classnames": "^2.3.1"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^17.1.0"
+	}
+}

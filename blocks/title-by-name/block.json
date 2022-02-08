@@ -1,0 +1,55 @@
+{
+	"apiVersion": 2,
+	"name": "cjd-blocks/title-by-name",
+	"version": "0.2.0",
+	"title": "Title by Name",
+	"category": "theme",
+	"icon": "nametag",
+	"description": "Title by name for post types that support at least one of these meta fields: First Name, Last Name or Middle Name. Additional support can be added for Courtesy Title and Name Suffix as well.",
+    "usesContext": [ "postId", "postType", "queryId" ],
+	"attributes": {
+		"textAlign": {
+			"type": "string",
+			"default": "left"
+		}
+	},
+	"supports": {
+		"anchor": true,
+        "html": false,
+        "multiple": false,
+        "align": [ "wide", "full" ],
+        "color": {
+			"gradients": true,
+			"link": true
+		},
+		"spacing": {
+			"margin": true
+		},
+        "typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontAppearance": true,
+				"textTransform": true
+			}
+		}
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		}
+	],
+	"textdomain": "cjd-blocks-title-by-name",
+	"render_callback": "render_cjd_blocks_title_by_name",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

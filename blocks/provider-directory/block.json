@@ -1,0 +1,30 @@
+{
+	"apiVersion": 2,
+	"name": "cjd-blocks/provider-directory",
+	"version": "0.2.0",
+	"title": "Provider Directory",
+	"category": "theme",
+	"icon": "groups",
+	"description": "Displays a directory of all the providers and links to their individual pages.",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "center"
+		}
+	},
+	"supports": {
+		"anchor": true
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		}
+	],
+	"textdomain": "cjd-blocks-provider-directory",
+	"render_callback": "render_cjd_blocks_provider_directory",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

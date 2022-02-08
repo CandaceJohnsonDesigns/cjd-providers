@@ -1,0 +1,54 @@
+{
+	"apiVersion": 2,
+	"name": "cjd-blocks/job-title",
+	"version": "0.2.0",
+	"title": "Job Title",
+	"category": "theme",
+	"icon": "nametag",
+	"description": "Job Title for post types that support the meta field.",
+    "usesContext": [ "postId", "postType", "queryId" ],
+	"attributes": {
+		"textAlign": {
+			"type": "string",
+			"default": "left"
+		}
+	},
+	"supports": {
+		"anchor": true,
+        "html": false,
+        "multiple": false,
+        "align": [ "wide", "full" ],
+        "color": {
+			"gradients": true
+		},
+		"spacing": {
+			"margin": true
+		},
+        "typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontAppearance": true,
+				"textTransform": true
+			}
+		}
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		}
+	],
+	"textdomain": "cjd-blocks-job-title",
+	"render_callback": "render_cjd_blocks_job_title",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

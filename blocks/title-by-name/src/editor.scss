@@ -1,0 +1,41 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.editor-styles-wrapper  {
+	.wp-block-cjd-blocks-title-by-name {
+		&.is-selected {
+			h1 {
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+		}
+
+		&.has-justify-left {
+			justify-content: flex-start;
+		}
+
+		&.has-justify-center {
+			justify-content: center;
+		}
+
+		&.has-justify-right {
+			justify-content: flex-end;
+		}
+
+	}
+
+	.components-input-control__label,
+	.title_by_name__label {
+		font-size: var(--wp--preset--font-size--fineprint);
+	}
+
+	.title_by_name__label {
+		padding-top: .5em;
+		border-top: 1px solid gray;
+		margin-top: .5em;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"apiVersion": 2,
+	"name": "cjd-blocks/single-provider-template",
+	"version": "0.2.0",
+	"title": "Single Provider Template",
+	"category": "theme",
+	"icon": "groups",
+	"description": "A layout template for the individual Provider page.",
+	"supports": {
+		"anchor": true,
+		"align": [ "full", "wide" ]
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		}
+	],
+	"textdomain": "cjd-blocks-single-provider-template",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

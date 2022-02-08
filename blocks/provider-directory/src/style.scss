@@ -1,0 +1,116 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.provider-directory {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 2rem;
+    list-style: none;
+
+    figure {
+        margin: 0;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    .subhead {
+        font-weight: 300;
+        text-transform: uppercase;
+        margin: 1em 0;
+        letter-spacing: 0;
+    }
+
+    .provider-job-title {
+        font-size: .75em;
+        font-style: italic;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+//     .credentials {
+//             font-size: .75em;
+//             font-style: italic;
+//             margin-top: 0;
+//             margin-bottom: 0;
+//     }
+
+    .provider {
+        list-style: none;
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        &:not(.no-photo):hover {
+            background-color: var(--global--color-ch-blue-20-tint--overlay);
+        }
+
+        &:hover {
+            .provider-name {
+                color: inherit;
+            }
+        }
+
+        .with-placeholder {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 248px;
+        }
+
+        .placeholder {
+            background-color: gainsboro;
+            width: 100%;
+            flex: 1 1 auto;
+            border-radius: 4px;
+        }
+    }
+
+    .missing-provider-photo {
+
+        .provider {
+            list-style: inside;
+            margin-bottom: .25em;
+            margin-left: .5em;
+        }
+    }
+
+    .provider-photo {
+        img {
+            border-radius: 4px;
+        }
+
+        margin-bottom: .5em;
+    }
+
+    .provider-name {
+        letter-spacing: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: var(--wp--preset--color--ch-blue);
+    }
+
+    .provider:not(.no-photo), 
+    .provider-directory ul ul {
+        border-radius: 6px;
+        transition: ease-in .3s;
+        padding: .75em;
+        box-shadow: 1px 1px 5px gray;
+        text-align: center;
+    }
+
+    .subhead {
+        font-size: var(--wp--preset--font-size--small);
+        font-weight: 500;
+        margin-bottom: .5em;
+    }
+}
+ 
