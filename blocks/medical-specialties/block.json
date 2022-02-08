@@ -1,0 +1,59 @@
+{
+	"apiVersion": 2,
+	"name": "cjd-blocks/medical-specialties",
+	"version": "0.2.0",
+	"title": "Medical Specialties",
+	"category": "theme",
+	"icon": "groups",
+	"description": "A list of medical specialties for specific provider",
+    "attributes": {
+        "term": {
+            "type": "string"
+        },
+        "isInline": {
+            "type": "boolean",
+            "default": true
+        },
+		"displayAcronym": {
+			"type": "boolean",
+			"default": false
+		},
+        "textAlign": {
+            "type": "string"
+        },
+        "separator": {
+            "type": "string",
+            "default": ", "
+        }
+    },
+    "usesContext": [ "postId", "postType" ],
+	"supports": {
+		"html": false,
+		"color": {
+			"gradients": true,
+			"link": true
+		},
+		"typography": {
+			"lineHeight": true,
+			"fontSize": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		}
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		}
+	],
+	"textdomain": "cjd-blocks-medical-specialties",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
