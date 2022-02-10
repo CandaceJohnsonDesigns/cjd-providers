@@ -97,7 +97,8 @@ class CJD_Providers_Custom_Post_Types {
 
 
 	function custom_enter_title( $input ) {
-		if ( 'providers' === get_post_type() ) {
+	    $screen = get_current_screen();
+		if ( 'providers' === $screen->post_type ) {
 			return __( 'Enter Provider Name...', 'cjd-providers' );
 		}
 	

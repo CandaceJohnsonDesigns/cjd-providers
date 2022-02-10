@@ -236,43 +236,43 @@ if ( ! class_exists( 'CJD_Providers' ) ) :
 			//register_block_type( plugin_dir_path( __FILE__ ) . 'blocks/single-provider-template/' );
 
 			// automatically load dependencies and version
-			$asset_file = include( plugin_dir_path( __FILE__ ) . 'blocks/medical-specialties/build/index.asset.php');
-		
-			wp_register_script(
-				'cjd-blocks-medical-specialties',
-				plugins_url( 'blocks/medical-specialties/build/index.js', __FILE__ ),
-				$asset_file['dependencies'],
-				$asset_file['version']
-			);
-
-			register_block_type( 
-				plugin_dir_path( __FILE__ ) . 'blocks/medical-specialties/',
-				array(
-					'api_version' => 2,
-					'attributes' => array(
-						'term' => array(
-							'type' => 'string'
-						),
-						'isInline' => array(
-							'type' => 'boolean',
-							'default' => true
-						),
-						'displayAcronym' => array(
-                            'type' => 'boolean',
-                            'default' => true
-                        ),
-						'textAlign' => array(
-							'type' => 'string'
-						),
-						'separator' => array(
-							'type' => 'string',
-							'default' => ', '
-						)
-					),
-					'editor_script' => 'cjd-blocks-medical-specialties',
-					'render_callback' => array( $this, 'render_cjd_blocks_medical_specialties' )
-				)
-			);
+// 			$asset_file = include( plugin_dir_path( __FILE__ ) . 'blocks/medical-specialties/build/index.asset.php');
+//
+// 			wp_register_script(
+// 				'cjd-blocks-medical-specialties',
+// 				plugins_url( 'blocks/medical-specialties/build/index.js', __FILE__ ),
+// 				$asset_file['dependencies'],
+// 				$asset_file['version']
+// 			);
+//
+// 			register_block_type(
+// 				plugin_dir_path( __FILE__ ) . 'blocks/medical-specialties/',
+// 				array(
+// 					'api_version' => 2,
+// 					'attributes' => array(
+// 						'term' => array(
+// 							'type' => 'string'
+// 						),
+// 						'isInline' => array(
+// 							'type' => 'boolean',
+// 							'default' => true
+// 						),
+// 						'displayAcronym' => array(
+//                             'type' => 'boolean',
+//                             'default' => true
+//                         ),
+// 						'textAlign' => array(
+// 							'type' => 'string'
+// 						),
+// 						'separator' => array(
+// 							'type' => 'string',
+// 							'default' => ', '
+// 						)
+// 					),
+// 					'editor_script' => 'cjd-blocks-medical-specialties',
+// 					'render_callback' => array( $this, 'render_cjd_blocks_medical_specialties' )
+// 				)
+// 			);
 		}
 
 		function render_cjd_blocks_title_by_name( $block_attributes, $content ) {
