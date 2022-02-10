@@ -38,10 +38,7 @@
   text-decoration: none;
 }
 .provider-directory .provider:not(.no-photo):hover {
-  background-color: var(--global--color-ch-blue-20-tint--overlay);
-}
-.provider-directory .provider:hover .provider-name {
-  color: inherit;
+  background-color: #cce6ee;
 }
 .provider-directory .provider .with-placeholder {
   display: flex;
@@ -54,11 +51,6 @@
   width: 100%;
   flex: 1 1 auto;
   border-radius: 4px;
-}
-.provider-directory .missing-provider-photo .provider {
-  list-style: inside;
-  margin-bottom: 0.25em;
-  margin-left: 0.5em;
 }
 .provider-directory .provider-photo {
   margin-bottom: 0.5em;
@@ -73,12 +65,12 @@
   margin-bottom: 0;
   color: var(--wp--preset--color--ch-blue);
 }
-.provider-directory .provider:not(.no-photo),
-.provider-directory .provider-directory ul ul {
+.provider-directory .provider {
   border-radius: 6px;
   transition: ease-in 0.3s;
   padding: 0.75em;
-  box-shadow: 1px 1px 5px gray;
+  background-color: white;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
   text-align: center;
 }
 .provider-directory .subhead {

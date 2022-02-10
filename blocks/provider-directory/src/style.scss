@@ -50,14 +50,15 @@
         }
 
         &:not(.no-photo):hover {
-            background-color: var(--global--color-ch-blue-20-tint--overlay);
+            background-color: #cce6ee;
         }
 
-        &:hover {
-            .provider-name {
-                color: inherit;
-            }
-        }
+
+//         &:hover {
+//             .provider-name {
+//                 color: inherit;
+//             }
+//         }
 
         .with-placeholder {
             display: flex;
@@ -71,15 +72,6 @@
             width: 100%;
             flex: 1 1 auto;
             border-radius: 4px;
-        }
-    }
-
-    .missing-provider-photo {
-
-        .provider {
-            list-style: inside;
-            margin-bottom: .25em;
-            margin-left: .5em;
         }
     }
 
@@ -99,14 +91,24 @@
         color: var(--wp--preset--color--ch-blue);
     }
 
-    .provider:not(.no-photo), 
-    .provider-directory ul ul {
-        border-radius: 6px;
-        transition: ease-in .3s;
-        padding: .75em;
-        box-shadow: 1px 1px 5px gray;
-        text-align: center;
-    }
+//     .provider:not(.no-photo),
+//     .missing-provider-photo {
+//         border-radius: 6px;
+//         transition: ease-in .3s;
+//         padding: .75em;
+//         box-shadow: 1px 1px 5px gray;
+//         text-align: center;
+//     }
+
+    .provider {
+            border-radius: 6px;
+            transition: ease-in .3s;
+            padding: .75em;
+            background-color: white;
+            filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.075))
+            		drop-shadow(0 1px 2px rgb(0 0 0 / 0.4));
+            text-align: center;
+        }
 
     .subhead {
         font-size: var(--wp--preset--font-size--small);

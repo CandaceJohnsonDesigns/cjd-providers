@@ -448,7 +448,7 @@ if ( ! class_exists( 'CJD_Providers' ) ) :
 
 				elseif ( $displayProviderPhoto && ! has_post_thumbnail() ):
 					$provider_listing .= '<li class="provider no-photo"><a href="' . $permalink . '">';
-					$provider_listing .= '<h6 class="provider-name">' . $title . '</h6>';
+					$provider_listing .= '<div class="provider-info"><h6 class="provider-name">' . $title . '</h6>';
 
 					if ( $displayJobTitle && $jobTitle ) {
 						$provider_listing .= '<p class="provider-job-title">';
@@ -460,6 +460,8 @@ if ( ! class_exists( 'CJD_Providers' ) ) :
                         $provider_listing .= $jobTitle;
 						$provider_listing .= '</p>';
 					}
+
+					$provider_listing .= '</div></a></li>';
 
 					$directory_without_photo .= $provider_listing;
 				else:
