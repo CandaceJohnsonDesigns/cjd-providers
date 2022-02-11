@@ -403,101 +403,82 @@ if ( ! class_exists( 'CJD_Providers' ) ) :
 		
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) :  
-			$num_without_photos = 0;
+			//$num_without_photos = 0;
 			$directory = '';
-			$directory_with_photo = '<ul class="provider-directory">';
-			$directory_without_photo = '<ul class="missing-provider-photo"><h5 class="subhead">Photo Unavailable:</h5>';
-
-			if ( ! $displayProviderPhoto ) {
-				$directory .= '<ul class="provider-directory no-photo">';
-			}
+			$directory_with_photo = '';
+			$directory_without_photo = '';
 
 			while ( $query->have_posts() ) : $query->the_post();
-				$provider_listing = ''; 
 				$provider_id = get_the_ID();
 				$permalink = esc_url( get_permalink( $provider_id ));
 				$title = esc_html( get_the_title( $provider_id ) );
-				$credentials = get_the_terms( $provider_id, 'credential');
+				//$credentials = get_the_terms( $provider_id, 'credential');
 				$jobTitle = get_post_meta( $provider_id, 'cjd_job_title', true);
 
-				if ( $displayProviderPhoto && has_post_thumbnail() ) :
-					$num_without_photos++;
+				//$img_url = get_the_post_thumbnail_url($provider_id, 'large');
 
-					$provider_listing .= '<li class="provider"><a href="' . $permalink . '">';
+				$includeThumbnail = $displayProviderPhoto && has_post_thumbnail();
+				$providerPhotoComponent =
+				    $displayProviderPhoto && has_post_thumbnail() ?
+                	    sprintf(
+                		    '<figure class="provider-photo"><img src="%1$s" /></figure>',
+                			get_the_post_thumbnail_url($provider_id, 'large')
+                		) :
+                		'';
 
-					$img_url = get_the_post_thumbnail_url($provider_id, 'large');
-					$provider_listing .= '<figure class="provider-photo"><img src="' . $img_url . '" /></figure>'; 
+                $jobTitleComponent =
+                    $displayJobTitle && $jobTitle ?
+					    sprintf(
+					        '<p class="provider-job-title">%1$s</p>',
+					        $jobTitle
+					    ) :
+					    '';
 
-					$provider_listing .= '<div class="provider-info"><h6 class="provider-name">' . $title . '</h6>';
+                $provider_listing =
+					    sprintf(
+					        '<li class="provider">' .
+					            '<a href="%1$s">' .
+					                '%2$s' .
+					                '<div class="provider-info">' .
+					                    '<h6 class="provider-name">%3$s</h6>' .
+					                    '%4$s' .
+					                '</div>' .
+					            '</a>' .
+					        '</li>',
+					        $permalink,
+					        $providerPhotoComponent,
+					        $title,
+                            $jobTitleComponent
+					    );
 
-					if ( $displayJobTitle && $jobTitle ) {
-						$provider_listing .= '<p class="provider-job-title">';
-// 						$separator = '';
-// 						foreach( $credentials as $credential ) {
-// 							$provider_listing .=  $separator . $credential->name;
-// 							$separator = ', ';
-// 						}
-						$provider_listing .= $jobTitle;
-						$provider_listing .= '</p>';
-					}
-
-
-					$provider_listing .= '</div></a></li>';
-
-					$directory_with_photo .= $provider_listing;
-
-				elseif ( $displayProviderPhoto && ! has_post_thumbnail() ):
-					$provider_listing .= '<li class="provider no-photo"><a href="' . $permalink . '">';
-					$provider_listing .= '<div class="provider-info"><h6 class="provider-name">' . $title . '</h6>';
-
-					if ( $displayJobTitle && $jobTitle ) {
-						$provider_listing .= '<p class="provider-job-title">';
-// 						$separator = '';
-// 						foreach( $credentials as $credential ) {
-// 							$provider_listing .=  $separator . $credential->name;
-// 							$separator = ', ';
-// 						}
-                        $provider_listing .= $jobTitle;
-						$provider_listing .= '</p>';
-					}
-
-					$provider_listing .= '</div></a></li>';
-
-					$directory_without_photo .= $provider_listing;
-				else:
-
-					$provider_listing .= '<li class="provider"><a href="' . $permalink . '">';
-					$provider_listing .= '<div class="provider-info"><h6 class="provider-name">' . $title . '</h6>';
-
-					if ( $displayJobTitle && $credentials ) {
-						$provider_listing .= '<p class="credentials">';
-						$separator = '';
-						foreach( $credentials as $credential ) {
-							$provider_listing .=  $separator . $credential->name;
-							$separator = ', ';
-						}
-						$provider_listing .= '</p>';
-					}
-
-					$provider_listing .= '</div></a></li>';
-
-					$directory .= $provider_listing;
-				endif;
+					    if ( $includeThumbnail ) {
+					        $directory_with_photo .= $provider_listing;
+					    } else {
+					        $directory_without_photo .= $provider_listing;
+					    }
 
 			endwhile;
 
-			if ( ! $displayProviderPhoto ) {
-				$directory .= '</ul>';
-			}
+            $directory = sprintf(
+                '<section class="provider-directory">' .
+                    '%1$s' .
+                    '%2$s' .
+                '</section>',
+            	$directory_with_photo ?
+            	    sprintf(
+            	        '<ul class="%1$s">%2$s</ul>',
+            	        'has-provider-photo',
+            	        $directory_with_photo
+            	    ) :
+            	    '',
+                $directory_without_photo ?
+            	    sprintf(
+            	        '<div class="no-provider-photo"><h6 class="subhead">Photo Unavailable:</h6><ul>%1$s</ul></div>',
+            	        $directory_without_photo
+            	    ) :
+            	    '',
+            );
 
-			$directory_without_photo .= '</ul>';
-
-			$directory_with_photo = $directory_with_photo . 
-				( $num_without_photos >= 1 ?
-				$directory_without_photo
-				: '') . '</ul>';
-
-			$directory .= $directory_with_photo;
 			wp_reset_postdata(); 
 		else: 
 			$directory = null;

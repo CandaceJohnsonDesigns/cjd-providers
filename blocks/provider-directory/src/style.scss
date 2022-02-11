@@ -6,11 +6,9 @@
  */
 
 .provider-directory {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 2rem;
-    list-style: none;
+    .no-provider-photo {
+        margin-top: var(--wp--style--block-gap);
+    }
 
     figure {
         margin: 0;
@@ -18,13 +16,19 @@
 
     ul {
         padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 2rem;
     }
 
     .subhead {
-        font-weight: 300;
         text-transform: uppercase;
-        margin: 1em 0;
         letter-spacing: 0;
+        font-size: var(--wp--preset--font-size--normal);
+        color: var(--wp--preset--color--gray);
+        font-weight: 500;
+        margin-bottom: .5em;
     }
 
     .provider-job-title {
@@ -43,6 +47,13 @@
 
     .provider {
         list-style: none;
+        border-radius: 6px;
+        transition: ease-in .3s;
+        padding: .75em;
+        background-color: white;
+        filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.075))
+                drop-shadow(0 1px 2px rgb(0 0 0 / 0.4));
+        text-align: center;
 
         a {
             display: block;
@@ -53,12 +64,6 @@
             background-color: #cce6ee;
         }
 
-
-//         &:hover {
-//             .provider-name {
-//                 color: inherit;
-//             }
-//         }
 
         .with-placeholder {
             display: flex;
@@ -91,29 +96,5 @@
         color: var(--wp--preset--color--ch-blue);
     }
 
-//     .provider:not(.no-photo),
-//     .missing-provider-photo {
-//         border-radius: 6px;
-//         transition: ease-in .3s;
-//         padding: .75em;
-//         box-shadow: 1px 1px 5px gray;
-//         text-align: center;
-//     }
-
-    .provider {
-            border-radius: 6px;
-            transition: ease-in .3s;
-            padding: .75em;
-            background-color: white;
-            filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.075))
-            		drop-shadow(0 1px 2px rgb(0 0 0 / 0.4));
-            text-align: center;
-        }
-
-    .subhead {
-        font-size: var(--wp--preset--font-size--small);
-        font-weight: 500;
-        margin-bottom: .5em;
-    }
 }
  

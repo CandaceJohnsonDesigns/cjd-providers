@@ -4,25 +4,27 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.provider-directory {
-  padding: 0;
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 2rem;
-  list-style: none;
+.provider-directory .no-provider-photo {
+  margin-top: var(--wp--style--block-gap);
 }
 .provider-directory figure {
   margin: 0;
 }
 .provider-directory ul {
   padding: 0;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 2rem;
 }
 .provider-directory .subhead {
-  font-weight: 300;
   text-transform: uppercase;
-  margin: 1em 0;
   letter-spacing: 0;
+  font-size: var(--wp--preset--font-size--normal);
+  color: var(--wp--preset--color--gray);
+  font-weight: 500;
+  margin-bottom: 0.5em;
 }
 .provider-directory .provider-job-title {
   font-size: 0.75em;
@@ -32,6 +34,12 @@
 }
 .provider-directory .provider {
   list-style: none;
+  border-radius: 6px;
+  transition: ease-in 0.3s;
+  padding: 0.75em;
+  background-color: white;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+  text-align: center;
 }
 .provider-directory .provider a {
   display: block;
@@ -64,19 +72,6 @@
   margin-top: 0;
   margin-bottom: 0;
   color: var(--wp--preset--color--ch-blue);
-}
-.provider-directory .provider {
-  border-radius: 6px;
-  transition: ease-in 0.3s;
-  padding: 0.75em;
-  background-color: white;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.075)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
-  text-align: center;
-}
-.provider-directory .subhead {
-  font-size: var(--wp--preset--font-size--small);
-  font-weight: 500;
-  margin-bottom: 0.5em;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
