@@ -386,6 +386,7 @@ if ( ! class_exists( 'CJD_Providers' ) ) :
 
 			$args = array(
 			'post_type'=> 'providers',
+			'posts_per_page'=>-1,
 			'meta_query' => array(
 				'relation' => 'AND',
 				'query_last_name' => array(
